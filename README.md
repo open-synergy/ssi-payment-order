@@ -19,6 +19,8 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [ssi_payment_order](ssi_payment_order/) | 14.0.1.0.0 |  | Payment Order
+[ssi_payment_order_bank_cash_voucher](ssi_payment_order_bank_cash_voucher/) | 14.0.1.0.0 |  | Payment Order + Cash Bank Voucher
+[ssi_payment_order_cheque_voucher](ssi_payment_order_cheque_voucher/) | 14.0.1.0.0 |  | Payment Order + Cheque Voucher
 
 [//]: # (end addons)
 
