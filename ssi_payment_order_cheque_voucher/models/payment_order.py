@@ -27,7 +27,7 @@ class PaymentOrder(models.Model):
         for payment_request in self.payment_request_ids:
             payment_request._create_realization_cheque()
 
-    def _prepare_voucher_header(self):
+    def _prepare_cheque_voucher_header(self):
         self.ensure_one()
         return {
             "name": "/",
