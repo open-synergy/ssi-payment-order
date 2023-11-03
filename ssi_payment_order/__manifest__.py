@@ -22,6 +22,7 @@
         "ssi_res_currency_m2o_configurator_mixin",
         "ssi_res_partner_bank_m2o_configurator_mixin",
         "ssi_m2o_configurator_mixin",
+        "ssi_account_move_line_day_overdue",
         "base_automation",
     ],
     "data": [
