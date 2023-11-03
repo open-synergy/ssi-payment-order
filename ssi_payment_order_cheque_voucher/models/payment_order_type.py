@@ -13,7 +13,7 @@ class PaymentOrderType(models.Model):
 
     realization_method = fields.Selection(
         selection_add=[
-            ("cheque", "Bank Payment"),
+            ("cheque", "Cheque Payment"),
         ],
         ondelete={
             "cheque": "set default",
