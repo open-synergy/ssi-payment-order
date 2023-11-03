@@ -17,3 +17,4 @@ git+https://github.com/open-synergy/ssi-mixin@14.0#subdirectory=setup/ssi_m2o_co
 git+https://github.com/open-synergy/ssi-financial-accounting@14.0#subdirectory=setup/ssi_account_account_m2o_configurator_mixin
 git+https://github.com/open-synergy/ssi-financial-accounting@14.0#subdirectory=setup/ssi_account_journal_m2o_configurator_mixin
 git+https://github.com/open-synergy/ssi-financial-accounting@14.0#subdirectory=setup/ssi_financial_accounting
+git+https://github.com/open-synergy/ssi-financial-accounting@14.0#subdirectory=setup/ssi_account_move_line_day_overdue
