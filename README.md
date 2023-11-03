@@ -14,7 +14,11 @@ ssi-payment-order
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[ssi_payment_order](ssi_payment_order/) | 14.0.1.0.0 |  | Payment Order
 
 [//]: # (end addons)
 
