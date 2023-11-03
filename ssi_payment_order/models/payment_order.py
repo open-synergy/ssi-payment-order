@@ -15,6 +15,7 @@ class PaymentOrder(models.Model):
         "mixin.transaction_done",
         "mixin.transaction_open",
         "mixin.transaction_confirm",
+        "mixin.many2one_configurator",
     ]
     _description = "Payment Order"
 

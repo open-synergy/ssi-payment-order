@@ -21,6 +21,7 @@
         "ssi_res_partner_m2o_configurator_mixin",
         "ssi_res_currency_m2o_configurator_mixin",
         "ssi_res_partner_bank_m2o_configurator_mixin",
+        "ssi_m2o_configurator_mixin",
         "base_automation",
     ],
     "data": [
