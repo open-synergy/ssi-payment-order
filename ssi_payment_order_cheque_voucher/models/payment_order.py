@@ -11,7 +11,7 @@ class PaymentOrder(models.Model):
 
     cheque_payment_id = fields.Many2one(
         string="# Cheque Voucher",
-        comodel_name="account.bank_payment",
+        comodel_name="account.cheque_payment",
     )
 
     def _create_realization_cheque(self):
