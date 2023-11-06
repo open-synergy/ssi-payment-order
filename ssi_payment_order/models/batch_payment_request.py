@@ -197,6 +197,7 @@ class BatchPaymentRequest(models.Model):
                 ">=",
                 self.min_overdue,
             ),
+            ("state", "=", "posted"),
         ]
         Line = self.env["account.move.line"]
         lines = Line.search(criteria)
