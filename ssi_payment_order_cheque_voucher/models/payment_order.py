@@ -39,4 +39,5 @@ class PaymentOrder(models.Model):
             "type_id": self.env.ref(
                 "ssi_voucher_cheque.voucher_type_cheque_payment"
             ).id,
+            "date_issue": self.date,
         }
