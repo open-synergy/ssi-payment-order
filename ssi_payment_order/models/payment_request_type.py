@@ -29,3 +29,8 @@ class PaymentRequestType(models.Model):
         required=True,
         default=0,
     )
+    max_overdue = fields.Integer(
+        string="Max. Overdue",
+        required=True,
+        default=0,
+    )

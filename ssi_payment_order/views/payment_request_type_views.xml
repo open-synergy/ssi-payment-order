@@ -35,6 +35,7 @@
         <data>
             <xpath expr="//field[@name='active']" position="after">
                 <field name="min_overdue" />
+                <field name="max_overdue" />
             </xpath>
             <xpath expr="//page[1]" position="before">
                 <page name="partner" string="Partner">

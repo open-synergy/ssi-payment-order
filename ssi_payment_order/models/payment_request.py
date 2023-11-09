@@ -136,6 +136,14 @@ class PaymentRequest(models.Model):
             ],
         },
     )
+    account_id = fields.Many2one(
+        related="move_line_id.account_id",
+        store=True,
+    )
+    analytic_account_id = fields.Many2one(
+        related="move_line_id.analytic_account_id",
+        store=True,
+    )
     currency_id = fields.Many2one(
         string="Currency",
         related="move_line_id.currency_id",

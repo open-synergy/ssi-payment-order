@@ -73,6 +73,9 @@ class BatchPaymentRequest(models.Model):
     min_overdue = fields.Integer(
         related="type_id.min_overdue",
     )
+    max_overdue = fields.Integer(
+        related="type_id.max_overdue",
+    )
     date = fields.Date(
         string="Date",
         required=True,
@@ -185,6 +188,7 @@ class BatchPaymentRequest(models.Model):
     @ssi_decorator.post_done_action()
     def _10_create_payment_request(self):
         self.ensure_one()
+        day_diff = (self.date - fields.Date.today()).days
         criteria = [
             ("account_id", "in", self.allowed_account_ids.ids),
             ("journal_id", "in", self.allowed_journal_ids.ids),
@@ -195,10 +199,16 @@ class BatchPaymentRequest(models.Model):
             (
                 "days_overdue",
                 ">=",
-                self.min_overdue,
+                self.min_overdue - day_diff,
+            ),
+            (
+                "days_overdue",
+                "<=",
+                self.max_overdue - day_diff,
             ),
             ("move_id.state", "=", "posted"),
         ]
+        # raise UserError(str(criteria))
         Line = self.env["account.move.line"]
         lines = Line.search(criteria)
         for line in lines:

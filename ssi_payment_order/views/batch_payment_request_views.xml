@@ -41,6 +41,7 @@
             <xpath expr="//field[@name='user_id']" position="after">
                 <field name="type_id" />
                 <field name="min_overdue" />
+                <field name="max_overdue" />
                 <field
                         name="allowed_account_ids"
                         widget="many2many_tags"
