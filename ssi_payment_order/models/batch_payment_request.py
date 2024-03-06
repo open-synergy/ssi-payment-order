@@ -13,6 +13,7 @@ class BatchPaymentRequest(models.Model):
         "mixin.transaction_cancel",
         "mixin.transaction_done",
         "mixin.transaction_confirm",
+        "mixin.transaction_date_duration",
         "mixin.many2one_configurator",
     ]
     _description = "Batch Payment Request"
@@ -85,6 +86,12 @@ class BatchPaymentRequest(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    date_start = fields.Date(
+        required=False,
+    )
+    date_end = fields.Date(
+        required=False,
     )
     payment_request_ids = fields.One2many(
         string="Payment Requests",
@@ -185,34 +192,67 @@ class BatchPaymentRequest(models.Model):
                 )
             record.allowed_currency_ids = result
 
-    @ssi_decorator.post_done_action()
-    def _10_create_payment_request(self):
+    def action_populate(self):
+        for record in self.sudo():
+            record._populate()
+
+    def _populate(self):
         self.ensure_one()
-        day_diff = (self.date - fields.Date.today()).days
-        criteria = [
+        self.payment_request_ids.unlink()
+        domain1 = self._prepare_aml_domain()
+        AML = self.env["account.move.line"]
+        if not self.date_start and not self.date_end:
+            aml = AML.search(domain1)
+        elif self.date_start and not self.date_end:
+            domain2 = domain1 + [
+                ("date_maturity", "!=", False),
+                ("date_maturity", ">=", self.date_start),
+            ]
+            aml = AML.search(domain2)
+            domain2 = domain1 + [
+                ("date_maturity", "=", False),
+                ("date", ">=", self.date_start),
+            ]
+            aml += AML.search(domain2)
+        elif not self.date_start and self.date_end:
+            domain2 = domain1 + [
+                ("date_maturity", "!=", False),
+                ("date_maturity", "<=", self.date_end),
+            ]
+            aml = AML.search(domain2)
+            domain2 = domain1 + [
+                ("date_maturity", "=", False),
+                ("date", "<=", self.date_end),
+            ]
+            aml += AML.search(domain2)
+        elif self.date_start and self.date_end:
+            domain2 = domain1 + [
+                ("date_maturity", "!=", False),
+                ("date_maturity", ">=", self.date_start),
+                ("date_maturity", "<=", self.date_end),
+            ]
+            aml = AML.search(domain2)
+            domain2 = domain1 + [
+                ("date_maturity", "=", False),
+                ("date", ">=", self.date_start),
+                ("date", "<=", self.date_end),
+            ]
+            aml += AML.search(domain2)
+        for line in aml:
+            line._create_payment_request(self)
+
+    def _prepare_aml_domain(self):
+        self.ensure_one()
+        result = [
             ("account_id", "in", self.allowed_account_ids.ids),
             ("journal_id", "in", self.allowed_journal_ids.ids),
             ("currency_id", "in", self.allowed_currency_ids.ids),
             ("partner_id", "in", self.allowed_partner_ids.ids),
             ("credit", ">", 0.0),
             ("full_reconcile_id", "=", False),
-            (
-                "days_overdue",
-                ">=",
-                self.min_overdue - day_diff,
-            ),
-            (
-                "days_overdue",
-                "<=",
-                self.max_overdue - day_diff,
-            ),
             ("move_id.state", "=", "posted"),
         ]
-        # raise UserError(str(criteria))
-        Line = self.env["account.move.line"]
-        lines = Line.search(criteria)
-        for line in lines:
-            line._create_payment_request(self)
+        return result
 
     @ssi_decorator.post_cancel_action()
     def _10_delete_payment_request(self):

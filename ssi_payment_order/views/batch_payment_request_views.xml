@@ -13,6 +13,8 @@
             <xpath expr="field[@name='company_id']" position="after">
                 <field name="type_id" />
                 <field name="date" />
+                <field name="date_start" />
+                <field name="date_end" />
             </xpath>
         </data>
     </field>
@@ -40,8 +42,6 @@
         <data>
             <xpath expr="//field[@name='user_id']" position="after">
                 <field name="type_id" />
-                <field name="min_overdue" />
-                <field name="max_overdue" />
                 <field
                         name="allowed_account_ids"
                         widget="many2many_tags"
@@ -65,9 +65,19 @@
             </xpath>
             <xpath expr="//group[@name='header_right']" position="inside">
                 <field name="date" />
+                <field name="date_start" />
+                <field name="date_end" />
             </xpath>
             <xpath expr="//page[1]" position="before">
                 <page name="payment_request" string="Payment Requests">
+                    <button
+                            name="action_populate"
+                            type="object"
+                            string="Populate"
+                            class="oe_highlight"
+                            icon="fa-refresh"
+                            attrs="{'invisible':[('state','!=','draft')]}"
+                        />
                     <field name="payment_request_ids" widget="many2many" />
                 </page>
             </xpath>
