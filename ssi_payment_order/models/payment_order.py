@@ -15,6 +15,7 @@ class PaymentOrder(models.Model):
         "mixin.transaction_done",
         "mixin.transaction_open",
         "mixin.transaction_confirm",
+        "mixin.transaction_date_duration",
         "mixin.many2one_configurator",
     ]
     _description = "Payment Order"
@@ -102,6 +103,12 @@ class PaymentOrder(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    date_start = fields.Date(
+        required=False,
+    )
+    date_end = fields.Date(
+        required=False,
     )
     payment_request_ids = fields.One2many(
         string="Payment Requests",
@@ -244,13 +251,25 @@ class PaymentOrder(models.Model):
                 ("partner_id", "=", self.partner_id.id),
             ]
 
+        if self.date_start:
+            criteria += [
+                ("date", ">=", self.date_start),
+            ]
+
+        if self.date_end:
+            criteria += [
+                ("date", "<=", self.date_end),
+            ]
+
         if self.type_id.require_bank_account:
             criteria = [
                 ("partner_bank_id", "in", self.allowed_partner_bank_ids.ids),
             ]
         else:
             criteria = [
+                "|",
                 ("partner_bank_id", "=", False),
+                ("partner_bank_id", "in", self.allowed_partner_bank_ids.ids),
             ]
 
         PaymentRequest = self.env["payment_request"]
