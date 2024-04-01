@@ -13,9 +13,11 @@
             <xpath expr="field[@name='company_id']" position="after">
                 <field name="partner_id" widget="many2one_avatar" />
                 <field name="type_id" />
+                <field name="currency_id" invisible="1" />
                 <field name="date" />
                 <field name="date_start" />
                 <field name="date_end" />
+                <field name="amount_request" />
             </xpath>
         </data>
     </field>
@@ -69,7 +71,7 @@
                     <field
                             name="payment_request_ids"
                             widget="many2many"
-                            domain="[('currency_id','=',currency_id),('state','=','open')]"
+                            domain="[('currency_id','=',currency_id),('state','=','open'),('payment_order_id','=',False)]"
                         />
                 </page>
                 <page name="realization" string="Realization">

@@ -171,6 +171,11 @@ class PaymentRequest(models.Model):
             ],
         },
     )
+    bank_id = fields.Many2one(
+        string="Bank",
+        related="partner_bank_id.bank_id",
+        store=True,
+    )
     payment_order_id = fields.Many2one(
         string="# Payment Order",
         comodel_name="payment_order",

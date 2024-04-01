@@ -91,7 +91,10 @@ class PaymentOrder(models.Model):
         },
     )
     currency_id = fields.Many2one(
-        related="type_id.journal_id.currency_id",
+        string="Currency",
+        comodel_name="res.currency",
+        compute="_compute_currency_id",
+        related=False,
         store=True,
     )
     date = fields.Date(
@@ -156,6 +159,23 @@ class PaymentOrder(models.Model):
         store=False,
     )
 
+    @api.depends(
+        "type_id",
+        "company_id",
+    )
+    def _compute_currency_id(self):
+        for record in self:
+            result = False
+            if record.company_id:
+                result = record.company_id.currency_id
+            if record.type_id:
+                if record.type_id.journal_id.currency_id:
+                    result = record.type_id.journal_id.currency_id
+            record.currency_id = result
+
+    @api.depends(
+        "state",
+    )
     def _compute_realization_ok(self):
         for record in self:
             result = True
