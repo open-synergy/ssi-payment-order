@@ -29,7 +29,23 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data />
+        <data>
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="type_id" />
+                <field name="date" />
+                <field name="date_start" />
+                <field name="date_end" />
+            </xpath>
+            <xpath expr="//filter[@name='dom_my_data']" position="after">
+                <filter string="Date" name="filter_date" date="date" />
+                <filter
+                        string="Date Start"
+                        name="filter_date_start"
+                        date="date_start"
+                    />
+                <filter string="Date End" name="filter_date_end" date="date_end" />
+            </xpath>
+        </data>
     </field>
 </record>
 
