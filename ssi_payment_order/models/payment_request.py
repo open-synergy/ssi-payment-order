@@ -190,6 +190,7 @@ class PaymentRequest(models.Model):
         string="# Batch Payment Request",
         comodel_name="batch_payment_request",
         readonly=True,
+        ondelete="cascade",
     )
 
     @api.model
