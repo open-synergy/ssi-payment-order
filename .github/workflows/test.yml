@@ -64,8 +64,12 @@ jobs:
         run: manifestoo -d . check-dev-status --default-dev-status=Beta
       - name: Initialize test db
         run: oca_init_test_database
+        env:
+          EXCLUDE: l10n_generic_coa
       - name: Run tests
         run: oca_run_tests
+        env:
+          EXCLUDE: l10n_generic_coa
       - uses: codecov/codecov-action@v1
       - name: Update .pot files
         run: oca_export_and_push_pot https://x-access-token:${{ secrets.GIT_PUSH_TOKEN }}@github.com/${{ github.repository }}
