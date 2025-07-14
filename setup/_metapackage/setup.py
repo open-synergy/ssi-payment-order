@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for open-synergy-ssi-payment-order Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-ssi_batch_payment_request_work_log',
         'odoo14-addon-ssi_payment_order',
         'odoo14-addon-ssi_payment_order_bank_cash_voucher',
         'odoo14-addon-ssi_payment_order_cheque_voucher',
