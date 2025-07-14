@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo14-addon-ssi_payment_order',
         'odoo14-addon-ssi_payment_order_bank_cash_voucher',
         'odoo14-addon-ssi_payment_order_cheque_voucher',
+        'odoo14-addon-ssi_payment_order_work_log',
     ],
     classifiers=[
         'Programming Language :: Python',
