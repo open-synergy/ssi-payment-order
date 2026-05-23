@@ -15,4 +15,7 @@
     "data": [],
     "demo": [],
     "images": [],
+    "contributors": [
+        "Andhitia Rama <andhitia.r@gmail.com>",
+    ],
 }
