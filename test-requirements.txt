@@ -15,3 +15,4 @@ odoo14-addon-ssi-account-move-line-day-overdue
 odoo14-addon-ssi-voucher-bank-cash
 odoo14-addon-ssi-voucher-cheque
 odoo14-addon-ssi-work-log-mixin
+odoo-yaml-test
