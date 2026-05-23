@@ -1,0 +1,49 @@
+scenarios:
+  - name: "Batch Payment Request Work Log - Create Payment Request Type"
+    steps:
+      - step: "Create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test Batch Work Log Request Type"
+          code: "TST-BWLRT"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Assert request type created"
+        action: "assert"
+        target: "request_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Test Batch Work Log Request Type"
+
+  - name: "Batch Payment Request Work Log - Create Batch Payment Request"
+    steps:
+      - step: "Create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test Batch WL Type"
+          code: "TST-BWLT"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Create batch payment request"
+        action: "create"
+        model: "batch_payment_request"
+        save_as: "batch"
+        as_user: "base.user_admin"
+        values:
+          type_id: "EVAL: registry['request_type'].id"
+          date: "2024-01-01"
+
+      - step: "Assert batch in draft"
+        action: "assert"
+        target: "batch"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
