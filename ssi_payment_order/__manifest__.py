@@ -55,4 +55,7 @@
         "demo/payment_order_type_demo.xml",
     ],
     "images": [],
+    "contributors": [
+        "Andhitia Rama <andhitia.r@gmail.com>",
+    ],
 }
