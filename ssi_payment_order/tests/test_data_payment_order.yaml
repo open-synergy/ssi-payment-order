@@ -21,12 +21,14 @@ scenarios:
 
   - name: "Payment Order - Create Payment Order Type"
     steps:
-      - step: "Create journal"
-        action: "search"
+      - step: "Create test bank journal"
+        action: "create"
         model: "account.journal"
         save_as: "journal"
-        domain: [["type", "=", "bank"]]
-        limit: 1
+        values:
+          name: "Test Bank Journal"
+          code: "TBNK"
+          type: "bank"
 
       - step: "Create payment order type"
         action: "create"
@@ -48,12 +50,14 @@ scenarios:
 
   - name: "Payment Order - Create and Confirm Payment Order"
     steps:
-      - step: "Get bank journal"
-        action: "search"
+      - step: "Create test bank journal"
+        action: "create"
         model: "account.journal"
         save_as: "journal"
-        domain: [["type", "=", "bank"]]
-        limit: 1
+        values:
+          name: "Test Bank Journal 2"
+          code: "TBK2"
+          type: "bank"
 
       - step: "Create payment order type"
         action: "create"
