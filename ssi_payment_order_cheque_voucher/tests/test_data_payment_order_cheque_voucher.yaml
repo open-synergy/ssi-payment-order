@@ -1,0 +1,63 @@
+scenarios:
+  - name: "Payment Order Cheque Voucher - Create Payment Order Type With Cheque"
+    steps:
+      - step: "Get bank journal"
+        action: "search"
+        model: "account.journal"
+        save_as: "journal"
+        domain: [["type", "=", "bank"]]
+        limit: 1
+
+      - step: "Create payment order type for cheque"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test Cheque Payment Order Type"
+          code: "TST-CPOT"
+          journal_id: "EVAL: registry['journal'].id"
+          realization_method: "cheque"
+
+      - step: "Assert order type created"
+        action: "assert"
+        target: "order_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Test Cheque Payment Order Type"
+
+  - name: "Payment Order Cheque Voucher - Create Payment Order"
+    steps:
+      - step: "Get bank journal"
+        action: "search"
+        model: "account.journal"
+        save_as: "journal"
+        domain: [["type", "=", "bank"]]
+        limit: 1
+
+      - step: "Create payment order type"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test Cheque PO Type"
+          code: "TST-CPOT2"
+          journal_id: "EVAL: registry['journal'].id"
+          realization_method: "cheque"
+
+      - step: "Create payment order"
+        action: "create"
+        model: "payment_order"
+        save_as: "payment_order"
+        as_user: "base.user_admin"
+        values:
+          type_id: "EVAL: registry['order_type'].id"
+          date: "2024-01-01"
+
+      - step: "Assert payment order in draft"
+        action: "assert"
+        target: "payment_order"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
