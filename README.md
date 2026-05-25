@@ -18,11 +18,11 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[ssi_batch_payment_request_work_log](ssi_batch_payment_request_work_log/) | 14.0.1.0.0 |  | Batch Payment Request - Work Log Integration
-[ssi_payment_order](ssi_payment_order/) | 14.0.1.5.0 |  | Payment Order
-[ssi_payment_order_bank_cash_voucher](ssi_payment_order_bank_cash_voucher/) | 14.0.1.0.0 |  | Payment Order + Cash Bank Voucher
-[ssi_payment_order_cheque_voucher](ssi_payment_order_cheque_voucher/) | 14.0.1.1.1 |  | Payment Order + Cheque Voucher
-[ssi_payment_order_work_log](ssi_payment_order_work_log/) | 14.0.1.0.0 |  | Payment Order - Work Log Integration
+[ssi_batch_payment_request_work_log](ssi_batch_payment_request_work_log/) | 14.0.1.1.0 |  | Batch Payment Request - Work Log Integration
+[ssi_payment_order](ssi_payment_order/) | 14.0.1.6.0 |  | Payment Order
+[ssi_payment_order_bank_cash_voucher](ssi_payment_order_bank_cash_voucher/) | 14.0.1.1.0 |  | Payment Order + Cash Bank Voucher
+[ssi_payment_order_cheque_voucher](ssi_payment_order_cheque_voucher/) | 14.0.1.2.0 |  | Payment Order + Cheque Voucher
+[ssi_payment_order_work_log](ssi_payment_order_work_log/) | 14.0.1.1.0 |  | Payment Order - Work Log Integration
 
 [//]: # (end addons)
 
