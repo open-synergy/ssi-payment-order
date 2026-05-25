@@ -1,0 +1,106 @@
+scenarios:
+  - name: "Payment Order - Create Payment Request Type"
+    steps:
+      - step: "Create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test Payment Request Type"
+          code: "TST-PRT"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Assert request type created"
+        action: "assert"
+        target: "request_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Test Payment Request Type"
+
+  - name: "Payment Order - Create Payment Order Type"
+    steps:
+      - step: "Create test bank journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test Bank Journal"
+          code: "TBNK"
+          type: "bank"
+
+      - step: "Create payment order type"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test Payment Order Type"
+          code: "TST-POT"
+          journal_id: "EVAL: registry['journal'].id"
+          realization_method: "manual"
+
+      - step: "Assert order type created"
+        action: "assert"
+        target: "order_type"
+        asserts:
+          name:
+            type: "value"
+            expected: "Test Payment Order Type"
+
+  - name: "Payment Order - Create and Confirm Payment Order"
+    steps:
+      - step: "Create test bank journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test Bank Journal 2"
+          code: "TBK2"
+          type: "bank"
+
+      - step: "Create payment order type"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test PO Type For Order"
+          code: "TST-POT2"
+          journal_id: "EVAL: registry['journal'].id"
+          realization_method: "manual"
+
+      - step: "Create payment order"
+        action: "create"
+        model: "payment_order"
+        save_as: "payment_order"
+        as_user: "base.user_admin"
+        values:
+          type_id: "EVAL: registry['order_type'].id"
+          date: "2024-01-01"
+
+      - step: "Assert payment order in draft"
+        action: "assert"
+        target: "payment_order"
+        asserts:
+          state:
+            type: "value"
+            expected: "draft"
+
+      - step: "Confirm payment order"
+        action: "call"
+        target: "payment_order"
+        method: "action_confirm"
+        as_user: "base.user_admin"
+
+      - step: "Invalidate cache after confirm"
+        action: "call"
+        target: "payment_order"
+        method: "invalidate_cache"
+
+      - step: "Assert payment order confirmed"
+        action: "assert"
+        target: "payment_order"
+        asserts:
+          state:
+            type: "value"
+            expected: "confirm"
