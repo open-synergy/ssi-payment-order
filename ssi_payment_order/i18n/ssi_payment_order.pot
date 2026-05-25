@@ -1,0 +1,1297 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_payment_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__batch_payment_request_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "# Batch Payment Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__name
+msgid "# Document"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__payment_order_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "# Payment Order"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_bank_statement_line__payment_request_id
+msgid "# Payment Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__account_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_type_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Account"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__account_domain
+msgid "Account Domain"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__account_python_code
+msgid "Account Python Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__account_selection_method
+msgid "Account Selection Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__account_ids
+msgid "Accounts"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:base.automation,name:ssi_payment_order.payment_order_open_2_done
+#: model:base.automation,name:ssi_payment_order.payment_request_open_2_done
+#: model:ir.actions.server,name:ssi_payment_order.payment_order_action_done
+#: model:ir.actions.server,name:ssi_payment_order.payment_request_action_done
+msgid "Action Done"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_needaction
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_needaction
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_needaction
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_needaction
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:base.automation,name:ssi_payment_order.payment_order_done_2_open
+#: model:base.automation,name:ssi_payment_order.payment_request_done_2_open
+#: model:ir.actions.server,name:ssi_payment_order.payment_order_action_open
+#: model:ir.actions.server,name:ssi_payment_order.payment_request_action_open
+msgid "Action Open"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__active
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__active
+msgid "Active"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__active_approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__active_approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__active_approval_ids
+msgid "Active Approvals"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__active_approver_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__active_approver_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__active_approver_partner_ids
+msgid "Active Partners"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__active_approver_user_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__active_approver_user_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__active_approver_user_ids
+msgid "Active Users"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_type_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_all_group
+#: model:res.groups,name:ssi_payment_order.payment_order_all_group
+#: model:res.groups,name:ssi_payment_order.payment_request_all_group
+msgid "All"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__allowed_account_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__allowed_account_ids
+msgid "Allowed Accounts"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__allowed_partner_bank_ids
+msgid "Allowed Bank Accounts"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__allowed_currency_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__allowed_currency_ids
+msgid "Allowed Currencies"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__allowed_journal_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__allowed_journal_ids
+msgid "Allowed Journals"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__allowed_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__allowed_partner_ids
+msgid "Allowed Partners"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__allowed_policy_template_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__allowed_policy_template_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__allowed_policy_template_ids
+msgid "Allowed Policy Templates"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_form
+msgid "Amount"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__amount_payment
+msgid "Amount Payment"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__amount_request
+msgid "Amount Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__analytic_account_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Analytic Account"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__approval_template_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__approval_template_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__approval_template_id
+msgid "Approval Configuration"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__approval_template_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__approval_template_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__approval_template_id
+msgid "Approval Template"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__approval_ids
+msgid "Approvals"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__approve_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__approve_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__approve_ok
+msgid ""
+"Approve policy\n"
+"\n"
+"* If active user can see and execute 'Approve' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__approved
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__approved
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__approved
+msgid "Approved"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_attachment_count
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type1
+msgid "BCA BI Fast - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type2
+msgid "BCA Online - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type3
+msgid "BCA RTGS - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__bank_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Bank"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__partner_bank_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Bank Account"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_batch_payment_request
+#: model:ir.module.category,name:ssi_payment_order.batch_payment_request_data_ownership_module_category
+#: model:ir.module.category,name:ssi_payment_order.batch_payment_request_workflow_module_category
+msgid "Batch Payment Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.actions.act_window,name:ssi_payment_order.batch_payment_request_action
+#: model:ir.ui.menu,name:ssi_payment_order.batch_payment_request_menu
+msgid "Batch Payment Requests"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type4
+msgid "CIMB BI Fast - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type5
+msgid "CIMB Online - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_order_type,name:ssi_payment_order.payment_order_type6
+msgid "CIMB RTGS - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__approve_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__approve_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__approve_ok
+msgid "Can Approve"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__cancel_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__cancel_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__cancel_ok
+msgid "Can Cancel"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__confirm_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__confirm_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__confirm_ok
+msgid "Can Confirm"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__done_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__done_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__done_ok
+msgid "Can Finished"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__manual_number_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__manual_number_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__manual_number_ok
+msgid "Can Input Manual Document Number"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__realization_ok
+msgid "Can Realized"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__reject_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__reject_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__reject_ok
+msgid "Can Reject"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__restart_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__restart_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__restart_ok
+msgid "Can Restart"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__restart_approval_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__restart_approval_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__restart_approval_ok
+msgid "Can Restart Approval"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__open_ok
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__open_ok
+msgid "Can Start"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__cancel_reason_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__cancel_reason_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__cancel_reason_id
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__cancel_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__cancel_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__cancel_ok
+msgid ""
+"Cancel policy\n"
+"\n"
+"* If active user can see and execute 'Cancel' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__code
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__code
+msgid "Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__company_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__company_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__company_id
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_company_group
+#: model:res.groups,name:ssi_payment_order.payment_order_company_group
+#: model:res.groups,name:ssi_payment_order.payment_request_company_group
+msgid "Company"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__company_partner_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__company_partner_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__company_partner_id
+msgid "Company Partner"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_company_child_group
+#: model:res.groups,name:ssi_payment_order.payment_order_company_child_group
+#: model:res.groups,name:ssi_payment_order.payment_request_company_child_group
+msgid "Company and All Child Companies"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__company_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__company_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__company_id
+msgid ""
+"Company that own the document\n"
+"\n"
+"* Automatically filled with user's company.\n"
+"  Default company can be changed"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__confirm_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__confirm_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__confirm_ok
+msgid ""
+"Confirm policy\n"
+"\n"
+"* If active user can see and execute 'Confirm' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_form
+msgid "Create Realization"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__create_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__create_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__create_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__create_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__create_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__create_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__create_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__create_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__currency_ids
+msgid "Currencies"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__currency_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__currency_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Currency"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__currency_domain
+msgid "Currency Domain"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__currency_python_code
+msgid "Currency Python Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__currency_selection_method
+msgid "Currency Selection Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__date
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Date"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__date_end
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date_end
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+msgid "Date End"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__date_start
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date_start
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+msgid "Date Start"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_bank_statement_line__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__done_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__done_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__done_ok
+msgid ""
+"Done policy\n"
+"\n"
+"* If active user can see and execute 'Done' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_request_type,name:ssi_payment_order.payment_request_type2
+msgid "Employee Expense - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_follower_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_channel_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_partner_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__activity_type_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__activity_type_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__activity_type_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__activity_type_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_bank_statement_line__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move_line__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_exception_icon
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__activity_exception_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__activity_exception_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__activity_exception_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__activity_exception_icon
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_needaction
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_unread
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_needaction
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_unread
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_needaction
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_unread
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_needaction
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_unread
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_needaction
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_has_error
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_has_error
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_has_error
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_has_error
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_is_follower
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_is_follower
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_is_follower
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_is_follower
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__journal_domain
+msgid "Journal Domain"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__move_ids
+msgid "Journal Entries"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_account_move
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__move_id
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__move_state
+msgid "Journal Entry Status"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_account_move_line
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__move_line_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Journal Item"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__journal_python_code
+msgid "Journal Python Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__journal_selection_method
+msgid "Journal Selection Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__journal_ids
+msgid "Journals"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_bank_statement_line____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__write_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__write_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__write_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__write_uid
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__write_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__write_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__write_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__write_date
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields.selection,name:ssi_payment_order.selection__payment_order_type__realization_method__manual
+msgid "Manual Realization"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__manual_number_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__manual_number_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__manual_number_ok
+msgid ""
+"Manual number assignment policy\n"
+"\n"
+"* If active user can edit document number"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__active
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__active
+msgid ""
+"Master data status\n"
+"\n"
+"* Inactive data can not be selected when creating new transaction\n"
+"* Transaction with inactive master data can still be viewed\n"
+"* Set master data as inactive if master data no longger needed,\n"
+"but master data already used on transaction"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__code
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__code
+msgid ""
+"Master data unique identifier.\n"
+"\n"
+"* Fill with '/' if You do not need unique identifier\n"
+"* Click 'Generate Code' button to automatically assign code.\n"
+"  Sequence template mush be set to perform this action\n"
+"  Only master data with '/' code will be assign automatic code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__max_overdue
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__max_overdue
+msgid "Max. Overdue"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_has_error
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_has_error
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_has_error
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_has_error
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__min_overdue
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__min_overdue
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__min_overdue
+msgid "Min. Overdue"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__name
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__name
+msgid "Name"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__need_validation
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__need_validation
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_date_deadline
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_summary
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_summary
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_summary
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_summary
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__next_approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__next_approval_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__next_approval_ids
+msgid "Next Approvals"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__note
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__note
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__note
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__note
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__note
+msgid "Note"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_needaction_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_has_error_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_needaction_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_needaction_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_needaction_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_needaction_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_has_error_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_has_error_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_has_error_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_has_error_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__message_unread_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__message_unread_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__message_unread_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__message_unread_counter
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__partner_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__partner_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_type_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_type_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Partner"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__partner_bank_domain
+msgid "Partner Bank Domain"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__partner_bank_python_code
+msgid "Partner Bank Python Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__partner_bank_selection_method
+msgid "Partner Bank Selection Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__partner_bank_ids
+msgid "Partner Banks"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__partner_domain
+msgid "Partner Domain"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__partner_python_code
+msgid "Partner Python Code"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__partner_selection_method
+msgid "Partner Selection Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__partner_ids
+msgid "Partners"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_bank_statement_line__payment_order_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move__payment_order_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_payment__payment_order_id
+#: model:ir.module.category,name:ssi_payment_order.payment_order_data_ownership_module_category
+#: model:ir.module.category,name:ssi_payment_order.payment_order_workflow_module_category
+#: model:ir.ui.menu,name:ssi_payment_order.menu_payment_order_configuration
+msgid "Payment Order"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__payment_order_status
+msgid "Payment Order Status"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_payment_order_type
+#: model:res.groups,name:ssi_payment_order.payment_order_type_group
+msgid "Payment Order Type"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.actions.act_window,name:ssi_payment_order.payment_order_type_action
+msgid "Payment Order Types"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.actions.act_window,name:ssi_payment_order.payment_order_action
+#: model:ir.ui.menu,name:ssi_payment_order.payment_order_menu
+msgid "Payment Orders"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_payment_request
+#: model:ir.module.category,name:ssi_payment_order.payment_request_data_ownership_module_category
+#: model:ir.module.category,name:ssi_payment_order.payment_request_workflow_module_category
+#: model:ir.ui.menu,name:ssi_payment_order.menu_payment_request_configuration
+msgid "Payment Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model,name:ssi_payment_order.model_payment_request_type
+#: model:res.groups,name:ssi_payment_order.payment_request_type_group
+msgid "Payment Request Type"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.actions.act_window,name:ssi_payment_order.payment_request_type_action
+msgid "Payment Request Types"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.actions.act_window,name:ssi_payment_order.payment_request_action
+#: model:ir.model.fields,field_description:ssi_payment_order.field_account_move_line__payment_request_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__payment_request_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__payment_request_ids
+#: model:ir.ui.menu,name:ssi_payment_order.payment_request_menu
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_form
+msgid "Payment Requests"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_form
+msgid "Payment To"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__policy_template_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__policy_template_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__policy_template_id
+msgid "Policy Template"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_form
+msgid "Populate"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_form
+msgid "Populate Request"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_form
+msgid "Realization"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__realization_method
+msgid "Realization Method"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__reject_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__reject_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__reject_ok
+msgid ""
+"Reject policy\n"
+"\n"
+"* If active user can see and execute 'Reject' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__rejected
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__rejected
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__require_bank_account
+msgid "Require Bank Account"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__user_id
+msgid "Responsible"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__activity_user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__activity_user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__activity_user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__activity_user_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__restart_approval_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__restart_approval_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__restart_approval_ok
+msgid ""
+"Restart approval policy\n"
+"\n"
+"* If active user can see and execute 'Restart Approval' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__restart_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__restart_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__restart_ok
+msgid ""
+"Restart policy\n"
+"\n"
+"* If active user can see and execute 'Restart' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__reviewer_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__reviewer_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__reviewer_id
+msgid "Reviewer"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__open_ok
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__open_ok
+msgid ""
+"Start policy\n"
+"\n"
+"* If active user can see and execute 'Start' button"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__state
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__state
+msgid "State"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__activity_state
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__activity_state
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__activity_state
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__activity_state
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_tree
+msgid "Total Payment"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__name
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__name
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__name
+msgid ""
+"Transaction/document number\n"
+"\n"
+"* Unique indentifer of transaction\n"
+"* Leave '/' to automatically generate number\n"
+"* Change '/' into any number/identifier to manually assign number.\n"
+"  Manual number assignment can be done in 'Draft' state\n"
+"  Only user with 'Can Manualy Assign Number' policy can manually assign number.\n"
+"* Transaction with number other than '/' can not be deleted."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__type_id
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__type_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
+msgid "Type"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__activity_exception_decoration
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.ui.menu,name:ssi_payment_order.payment_order_type_menu
+#: model:ir.ui.menu,name:ssi_payment_order.payment_request_type_menu
+msgid "Types"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_unread
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_unread
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_unread
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_unread
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__message_unread_counter
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_user_group
+#: model:res.groups,name:ssi_payment_order.payment_order_user_group
+#: model:res.groups,name:ssi_payment_order.payment_request_user_group
+msgid "User"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__user_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__user_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__user_id
+msgid ""
+"User that responsible for document\n"
+"\n"
+"* Create user can be different with responsible user\n"
+"* Automatically filled with user that initiate document creation.\n"
+"  Default responsible can be changed."
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__reviewer_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__reviewer_id
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__reviewer_id
+msgid ""
+"User that responsible to review document\n"
+"\n"
+"* Unless it configured to approve reviewer does not equal to approver"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__active_approver_user_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__active_approver_user_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__active_approver_user_ids
+msgid "Users that can approve/reject document"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_validator_group
+#: model:res.groups,name:ssi_payment_order.payment_order_validator_group
+#: model:res.groups,name:ssi_payment_order.payment_request_validator_group
+msgid "Validator"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:payment_request_type,name:ssi_payment_order.payment_request_type1
+msgid "Vendor Bill - (test)"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:res.groups,name:ssi_payment_order.batch_payment_request_viewer_group
+#: model:res.groups,name:ssi_payment_order.payment_order_viewer_group
+#: model:res.groups,name:ssi_payment_order.payment_request_viewer_group
+msgid "Viewer"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__website_message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__website_message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__website_message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__website_message_ids
+#: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request_type__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ssi_payment_order
+#: model:ir.model.fields,help:ssi_payment_order.field_batch_payment_request__website_message_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order__website_message_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_order_type__website_message_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request__website_message_ids
+#: model:ir.model.fields,help:ssi_payment_order.field_payment_request_type__website_message_ids
+msgid "Website communication history"
+msgstr ""
