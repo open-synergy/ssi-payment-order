@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_payment_order_bank_cash_voucher
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order__bank_payment_id
+msgid "# Bank Voucher"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order__cash_payment_id
+msgid "# Cash Voucher"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_bank_payment__payment_order_id
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_cash_payment__payment_order_id
+msgid "# Payment Order"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model,name:ssi_payment_order_bank_cash_voucher.model_account_bank_payment
+#: model:ir.model.fields.selection,name:ssi_payment_order_bank_cash_voucher.selection__payment_order_type__realization_method__bank
+msgid "Bank Payment"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model,name:ssi_payment_order_bank_cash_voucher.model_account_cash_payment
+#: model:ir.model.fields.selection,name:ssi_payment_order_bank_cash_voucher.selection__payment_order_type__realization_method__cash
+msgid "Cash Payment"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_bank_payment__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_cash_payment__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order_type__display_name
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_request__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_bank_payment__id
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_cash_payment__id
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order__id
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order_type__id
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_request__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_bank_payment____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_cash_payment____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order_type____last_update
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_request____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model,name:ssi_payment_order_bank_cash_voucher.model_payment_order
+msgid "Payment Order"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model,name:ssi_payment_order_bank_cash_voucher.model_payment_order_type
+msgid "Payment Order Type"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_bank_payment__payment_order_ids
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_account_cash_payment__payment_order_ids
+msgid "Payment Orders"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model,name:ssi_payment_order_bank_cash_voucher.model_payment_request
+msgid "Payment Request"
+msgstr ""
+
+#. module: ssi_payment_order_bank_cash_voucher
+#: model:ir.model.fields,field_description:ssi_payment_order_bank_cash_voucher.field_payment_order_type__realization_method
+msgid "Realization Method"
+msgstr ""
