@@ -513,6 +513,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__date
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_search
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
 msgid "Date"
 msgstr ""
@@ -521,6 +522,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__date_end
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date_end
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_search
 msgid "Date End"
 msgstr ""
 
@@ -528,6 +530,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__date_start
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__date_start
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.batch_payment_request_view_search
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_search
 msgid "Date Start"
 msgstr ""
 
@@ -746,6 +749,7 @@ msgstr ""
 
 #. module: ssi_payment_order
 #: model:ir.model.fields.selection,name:ssi_payment_order.selection__payment_order_type__realization_method__manual
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_type_view_search
 msgid "Manual Realization"
 msgstr ""
 
@@ -928,6 +932,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__partner_id
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__partner_id
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_type_view_form
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_search
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_type_view_form
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
 msgid "Partner"
@@ -1087,6 +1092,7 @@ msgstr ""
 
 #. module: ssi_payment_order
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order_type__require_bank_account
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_type_view_search
 msgid "Require Bank Account"
 msgstr ""
 
@@ -1186,6 +1192,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:ssi_payment_order.field_batch_payment_request__type_id
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_order__type_id
 #: model:ir.model.fields,field_description:ssi_payment_order.field_payment_request__type_id
+#: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_order_view_search
 #: model_terms:ir.ui.view,arch_db:ssi_payment_order.payment_request_view_search
 msgid "Type"
 msgstr ""
