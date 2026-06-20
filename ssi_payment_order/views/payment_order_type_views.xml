@@ -22,7 +22,24 @@
         />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data />
+        <data>
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="journal_id" />
+            </xpath>
+            <xpath expr="//group[@name='dom_active']" position="after">
+                <separator />
+                <filter
+                        name="filter_realization_manual"
+                        string="Manual Realization"
+                        domain="[('realization_method','=','manual')]"
+                    />
+                <filter
+                        name="filter_require_bank_account"
+                        string="Require Bank Account"
+                        domain="[('require_bank_account','=',True)]"
+                    />
+            </xpath>
+        </data>
     </field>
 </record>
 
