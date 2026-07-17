@@ -1,0 +1,451 @@
+scenarios:
+  - name: "Payment Order - Operating Unit is set"
+    steps:
+      - step: "Setup - create journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test PO OU Journal"
+          code: "TPOOU1"
+          type: "bank"
+
+      - step: "Setup - create payment order type"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test PO OU Type"
+          code: "TST-POOU1"
+          journal_id: "REC: journal.id"
+          realization_method: "manual"
+
+      - step: "Create payment_order with operating_unit_id"
+        action: "create"
+        model: "payment_order"
+        save_as: "order"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: order_type.id"
+          date: "2024-01-01"
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Assert payment_order operating_unit_id is set"
+        action: "assert"
+        target: "order"
+        asserts:
+          operating_unit_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "Payment Order - ir.rule restricts access by operating unit"
+    steps:
+      - step: "Setup - create journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test PO OU Rule Journal"
+          code: "TPOOU2"
+          type: "bank"
+
+      - step: "Setup - create payment order type"
+        action: "create"
+        model: "payment_order_type"
+        save_as: "order_type"
+        values:
+          name: "Test PO OU Rule Type"
+          code: "TST-POOU2"
+          journal_id: "REC: journal.id"
+          realization_method: "manual"
+
+      - step: "Create payment_order with main operating unit"
+        action: "create"
+        model: "payment_order"
+        save_as: "order"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: order_type.id"
+          date: "2024-01-01"
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Create user restricted to a different operating unit"
+        action: "create"
+        model: "res.users"
+        save_as: "restricted_user"
+        values:
+          name: "Restricted Payment Order OU User"
+          login: "restricted_payment_order_ou_user@example.com"
+          groups_id:
+            - - 6
+              - 0
+              - - "REF: base.group_user"
+                - "REF: ssi_payment_order.payment_order_user_group"
+                - "REF: ssi_payment_order_operating_unit.payment_order_ou_group"
+          assigned_operating_unit_ids:
+            - - 6
+              - 0
+              - - "REF: operating_unit.b2b_operating_unit"
+
+      - step: "Restricted user cannot see the record"
+        action: "search"
+        model: "payment_order"
+        domain: [["id", "=", "REC: order.id"]]
+        save_as: "search_result"
+        as_user: "restricted_user"
+        expect_count: 0
+
+      - step: "Restricted user cannot write the record"
+        action: "write"
+        target: "order"
+        as_user: "restricted_user"
+        expect_error:
+          type: "AccessError"
+        values:
+          date: "2024-02-01"
+
+  - name: "Payment Request - Operating Unit is set"
+    steps:
+      - step: "Setup - create partner"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test PR OU Partner"
+          company_type: "person"
+
+      - step: "Setup - get payable account type"
+        action: "ref"
+        xml_id: "account.data_account_type_payable"
+        save_as: "payable_type"
+
+      - step: "Setup - get expense account type"
+        action: "ref"
+        xml_id: "account.data_account_type_expenses"
+        save_as: "expense_type"
+
+      - step: "Setup - create payable account"
+        action: "create"
+        model: "account.account"
+        save_as: "payable_account"
+        values:
+          name: "Test PR OU Payable"
+          code: "TESTPROU001"
+          user_type_id: "REC: payable_type.id"
+          reconcile: true
+
+      - step: "Setup - create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "expense_account"
+        values:
+          name: "Test PR OU Expense"
+          code: "TESTPROU002"
+          user_type_id: "REC: expense_type.id"
+
+      - step: "Setup - create journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test PR OU Journal"
+          code: "TPROU1"
+          type: "purchase"
+
+      - step: "Setup - create and post source journal entry"
+        action: "create"
+        model: "account.move"
+        save_as: "source_move"
+        values:
+          move_type: "entry"
+          journal_id: "REC: journal.id"
+          date: "2024-01-01"
+          line_ids:
+            - - 0
+              - 0
+              - account_id: "REC: expense_account.id"
+                name: "Test PR OU Expense Line"
+                debit: 1000.0
+                credit: 0.0
+            - - 0
+              - 0
+              - account_id: "REC: payable_account.id"
+                partner_id: "REC: partner.id"
+                name: "Test PR OU Payable Line"
+                debit: 0.0
+                credit: 1000.0
+
+      - step: "Post source journal entry"
+        action: "call"
+        target: "source_move"
+        method: "action_post"
+        as_user: "base.user_admin"
+
+      - step: "Get payable move line"
+        action: "search"
+        model: "account.move.line"
+        domain:
+          - ["move_id", "=", "REC: source_move.id"]
+          - ["credit", ">", 0.0]
+        save_as: "move_line"
+        limit: 1
+
+      - step: "Setup - create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test PR OU Type"
+          code: "TST-PROU1"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Create payment_request with operating_unit_id"
+        action: "create"
+        model: "payment_request"
+        save_as: "request"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: request_type.id"
+          partner_id: "REC: partner.id"
+          move_line_id: "REC: move_line.id"
+          amount_payment: 1000.0
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Assert payment_request operating_unit_id is set"
+        action: "assert"
+        target: "request"
+        asserts:
+          operating_unit_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "Payment Request - ir.rule restricts access by operating unit"
+    steps:
+      - step: "Setup - create partner"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test PR OU Rule Partner"
+          company_type: "person"
+
+      - step: "Setup - get payable account type"
+        action: "ref"
+        xml_id: "account.data_account_type_payable"
+        save_as: "payable_type"
+
+      - step: "Setup - get expense account type"
+        action: "ref"
+        xml_id: "account.data_account_type_expenses"
+        save_as: "expense_type"
+
+      - step: "Setup - create payable account"
+        action: "create"
+        model: "account.account"
+        save_as: "payable_account"
+        values:
+          name: "Test PR OU Rule Payable"
+          code: "TESTPROU003"
+          user_type_id: "REC: payable_type.id"
+          reconcile: true
+
+      - step: "Setup - create expense account"
+        action: "create"
+        model: "account.account"
+        save_as: "expense_account"
+        values:
+          name: "Test PR OU Rule Expense"
+          code: "TESTPROU004"
+          user_type_id: "REC: expense_type.id"
+
+      - step: "Setup - create journal"
+        action: "create"
+        model: "account.journal"
+        save_as: "journal"
+        values:
+          name: "Test PR OU Rule Journal"
+          code: "TPROU2"
+          type: "purchase"
+
+      - step: "Setup - create and post source journal entry"
+        action: "create"
+        model: "account.move"
+        save_as: "source_move"
+        values:
+          move_type: "entry"
+          journal_id: "REC: journal.id"
+          date: "2024-01-01"
+          line_ids:
+            - - 0
+              - 0
+              - account_id: "REC: expense_account.id"
+                name: "Test PR OU Rule Expense Line"
+                debit: 1000.0
+                credit: 0.0
+            - - 0
+              - 0
+              - account_id: "REC: payable_account.id"
+                partner_id: "REC: partner.id"
+                name: "Test PR OU Rule Payable Line"
+                debit: 0.0
+                credit: 1000.0
+
+      - step: "Post source journal entry"
+        action: "call"
+        target: "source_move"
+        method: "action_post"
+        as_user: "base.user_admin"
+
+      - step: "Get payable move line"
+        action: "search"
+        model: "account.move.line"
+        domain:
+          - ["move_id", "=", "REC: source_move.id"]
+          - ["credit", ">", 0.0]
+        save_as: "move_line"
+        limit: 1
+
+      - step: "Setup - create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test PR OU Rule Type"
+          code: "TST-PROU2"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Create payment_request with main operating unit"
+        action: "create"
+        model: "payment_request"
+        save_as: "request"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: request_type.id"
+          partner_id: "REC: partner.id"
+          move_line_id: "REC: move_line.id"
+          amount_payment: 1000.0
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Create user restricted to a different operating unit"
+        action: "create"
+        model: "res.users"
+        save_as: "restricted_user"
+        values:
+          name: "Restricted Payment Request OU User"
+          login: "restricted_payment_request_ou_user@example.com"
+          groups_id:
+            - - 6
+              - 0
+              - - "REF: base.group_user"
+                - "REF: ssi_payment_order.payment_request_user_group"
+                - "REF: ssi_payment_order_operating_unit.payment_request_ou_group"
+          assigned_operating_unit_ids:
+            - - 6
+              - 0
+              - - "REF: operating_unit.b2b_operating_unit"
+
+      - step: "Restricted user cannot see the record"
+        action: "search"
+        model: "payment_request"
+        domain: [["id", "=", "REC: request.id"]]
+        save_as: "search_result"
+        as_user: "restricted_user"
+        expect_count: 0
+
+      - step: "Restricted user cannot write the record"
+        action: "write"
+        target: "request"
+        as_user: "restricted_user"
+        expect_error:
+          type: "AccessError"
+        values:
+          amount_payment: 2000.0
+
+  - name: "Batch Payment Request - Operating Unit is set"
+    steps:
+      - step: "Setup - create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test BPR OU Type"
+          code: "TST-BPROU1"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Create batch_payment_request with operating_unit_id"
+        action: "create"
+        model: "batch_payment_request"
+        save_as: "batch"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: request_type.id"
+          date: "2024-01-01"
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Assert batch_payment_request operating_unit_id is set"
+        action: "assert"
+        target: "batch"
+        asserts:
+          operating_unit_id:
+            type: "value"
+            operator: "is_truthy"
+
+  - name: "Batch Payment Request - ir.rule restricts access by operating unit"
+    steps:
+      - step: "Setup - create payment request type"
+        action: "create"
+        model: "payment_request_type"
+        save_as: "request_type"
+        values:
+          name: "Test BPR OU Rule Type"
+          code: "TST-BPROU2"
+          min_overdue: 0
+          max_overdue: 30
+
+      - step: "Create batch_payment_request with main operating unit"
+        action: "create"
+        model: "batch_payment_request"
+        save_as: "batch"
+        as_user: "base.user_admin"
+        values:
+          type_id: "REC: request_type.id"
+          date: "2024-01-01"
+          operating_unit_id: "REF: operating_unit.main_operating_unit"
+
+      - step: "Create user restricted to a different operating unit"
+        action: "create"
+        model: "res.users"
+        save_as: "restricted_user"
+        values:
+          name: "Restricted Batch Payment Request OU User"
+          login: "restricted_batch_payment_request_ou_user@example.com"
+          groups_id:
+            - - 6
+              - 0
+              - - "REF: base.group_user"
+                - "REF: ssi_payment_order.batch_payment_request_user_group"
+                - "REF: ssi_payment_order_operating_unit.batch_payment_request_ou_group"
+          assigned_operating_unit_ids:
+            - - 6
+              - 0
+              - - "REF: operating_unit.b2b_operating_unit"
+
+      - step: "Restricted user cannot see the record"
+        action: "search"
+        model: "batch_payment_request"
+        domain: [["id", "=", "REC: batch.id"]]
+        save_as: "search_result"
+        as_user: "restricted_user"
+        expect_count: 0
+
+      - step: "Restricted user cannot write the record"
+        action: "write"
+        target: "batch"
+        as_user: "restricted_user"
+        expect_error:
+          type: "AccessError"
+        values:
+          date: "2024-02-01"
