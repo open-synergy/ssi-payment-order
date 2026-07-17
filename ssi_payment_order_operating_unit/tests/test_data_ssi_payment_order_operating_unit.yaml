@@ -427,8 +427,7 @@ scenarios:
               - 0
               - - "REF: base.group_user"
                 - "REF: ssi_payment_order.batch_payment_request_user_group"
-                - "REF:
-                  ssi_payment_order_operating_unit.batch_payment_request_ou_group"
+                - "REF: ssi_payment_order_operating_unit.batch_payment_request_ou_group"
           assigned_operating_unit_ids:
             - - 6
               - 0

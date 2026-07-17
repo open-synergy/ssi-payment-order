@@ -8,10 +8,7 @@
 <record id="batch_payment_request_view_tree" model="ir.ui.view">
     <field name="name">batch_payment_request tree</field>
     <field name="model">batch_payment_request</field>
-    <field
-            name="inherit_id"
-            ref="ssi_payment_order.batch_payment_request_view_tree"
-        />
+    <field name="inherit_id" ref="ssi_payment_order.batch_payment_request_view_tree" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='company_id']" position="after">
@@ -57,10 +54,7 @@
 <record id="batch_payment_request_view_form" model="ir.ui.view">
     <field name="name">batch_payment_request form</field>
     <field name="model">batch_payment_request</field>
-    <field
-            name="inherit_id"
-            ref="ssi_payment_order.batch_payment_request_view_form"
-        />
+    <field name="inherit_id" ref="ssi_payment_order.batch_payment_request_view_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='company_id']" position="after">
